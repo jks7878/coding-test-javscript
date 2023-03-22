@@ -13,7 +13,6 @@ function solution(begin, target, words) {
         let tmp = tmpArr.shift(); 
 
         if(tmp.str === target) { 
-            console.log(tmp.depth);
             return tmp.depth;
         }
         
@@ -34,8 +33,8 @@ function solution(begin, target, words) {
         }
     }
 
-    console.log(answer);
     return answer;
 }
 
-solution(begin, target, words);
+const answer = solution(begin, target, words);
+console.log(answer);
