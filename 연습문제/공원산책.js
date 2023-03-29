@@ -15,15 +15,15 @@ function solution(park, routes) {
         }
     }
     
-    const MAX_X = park[0].length;
-    const MAX_Y = park.length;
+    const MAX_W = park[0].length; 
+    const MAX_H = park.length;
     let movable = true;
     for(let c of routes) {
         const arr = c.split(' ');
         const step = parseInt(arr[1]);
         switch(arr[0]) {
             case 'E':
-                if(MAX_X > answer[1] + step) {
+                if(MAX_W > answer[1] + step) {
                     for(let i=0;i<arr[1];i++) {
                         if(park[answer[0]][answer[1] + (i + 1)] == 'X') {
                             movable = false;
@@ -49,7 +49,7 @@ function solution(park, routes) {
                 }
                 break;
             case 'S':
-                if(MAX_Y > answer[0] + step) {
+                if(MAX_H > answer[0] + step) {
                     for(let i=0;i<arr[1];i++) {
                         if(park[answer[0] + (i + 1)][answer[1]] == 'X') {
                             movable = false;
